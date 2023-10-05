@@ -1,0 +1,50 @@
+{% load static %}
+
+<nav class = "w-full flex justify-between items-center py-3 px-4 fixed z-50">
+    <div class="w-6/12">
+        <a href="/">
+            <img class="w-3/12" src="{% static 'Images/logo.png' %}">
+        </a>
+    </div>
+
+
+
+    <div class="w-6/12 flex flex-nowrap justify-end">
+        {% if user.is_authenticated %}
+        <div class="mr-2">
+            <form method="get" action="{% url 'filme:pesquisaFilme' %}">
+                <input type="text" class="py-1 px-2 rounded-md text-black" name="query" value="{{ request.GET.query }}" placeholder="Pesquisar...">
+                <input type="submit" value="">
+            </form>
+        </div>
+        {% endif %}
+
+        <div class="mr-2">
+            {% if user.is_authenticated %}
+            <a href="{% url 'filme:logout' %}">
+                <button class="bg-red-600 text-white py-1 px-3 rounded-md">
+                    Sair
+                </button>
+            </a>
+            {% else %}
+            <a href="{% url 'filme:login' %}">
+                <button class="bg-red-600 text-white py-1 px-3 rounded-md">
+                    Login
+                </button>
+            </a>
+            {% endif %}
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="mr-2">
+            <a href="{% url 'filme:editarPerfil' request.user.pk %}">
+                <button class="bg-red-600 text-white py-1 px-3 rounded-md">
+                    Editar Perfil
+                </button>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+
+</nav>
+
