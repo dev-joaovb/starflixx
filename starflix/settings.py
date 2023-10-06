@@ -20,14 +20,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q&ili8o!gc7jc+p4ao*)f!_42(-z7rcvg9r#rt$7#k88sa90!e'
+if TOKEN_CSRF:
+    SECRET_KEY = TOKEN_CSRF
+    CSRF_TRUSTED_ORIGINS = ['https://starflixx.up.railway.app']
+else:
+    SECRET_KEY = 'django-insecure-q&ili8o!gc7jc+p4ao*)f!_42(-z7rcvg9r#rt$7#k88sa90!e'
 ## Chave de seguranca
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ## Sempre verdadeiro
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['starflixx.up.railway.app', 'localhost', '127.0 0.1']
 ## Permicao de hosts
 
 
