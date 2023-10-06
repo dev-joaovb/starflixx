@@ -24,13 +24,13 @@ import os
 TOKEN_CSRF = os.getenv('TOKEN_CSRF')
 if TOKEN_CSRF:
     SECRET_KEY = TOKEN_CSRF
-    CSRF_TRUSTED_ORIGINS = ['https://starflixx.up.railway.app']
+    CSRF_TRUSTED_ORIGINS = ['starflixx.up.railway.app']
 else:
     SECRET_KEY = 'django-insecure-q&ili8o!gc7jc+p4ao*)f!_42(-z7rcvg9r#rt$7#k88sa90!e'
 ## Chave de seguranca
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ## Sempre verdadeiro
 
 ALLOWED_HOSTS = ['starflixx.up.railway.app', 'localhost', '127.0 0.1']
