@@ -30,7 +30,7 @@ else:
 ## Chave de seguranca
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ## Sempre verdadeiro
 
 ALLOWED_HOSTS = ['starflixx.up.railway.app', 'localhost', '127.0 0.1']
