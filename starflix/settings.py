@@ -33,7 +33,7 @@ else:
 DEBUG = True
 ## Sempre verdadeiro
 
-ALLOWED_HOSTS = ['starflixx.up.railway.app', 'localhost', '127.0 0.1']
+ALLOWED_HOSTS = ['starflixx.up.railway.app', 'localhost', '127.0.0.1']
 ## Permicao de hosts
 
 
